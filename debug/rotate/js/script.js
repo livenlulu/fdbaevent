@@ -8,7 +8,7 @@ var map = L.map('map', {
   rotate: true,
   animate: true, 
   duration: 2
-  }).setView([40.805177,-73.954929], 16);
+  }).setView([40.805177,-73.954929], 17);
   map.addLayer(layer);
   map.setBearing(331);
 
@@ -22,7 +22,6 @@ var bizmarker = {
   weight: 1,
   opacity: 1,
   fillOpacity: 0.8
-
 };
 
 var parking = L.icon({
@@ -161,10 +160,9 @@ function mouseoverFunction(e) {
 // this.openPopup();
 // }
 
+  // var layer = e.target;
 
-  var layer = e.target;
-
-    layer.setStyle({
+    geojson1.setStyle({
         weight: 3,
         opacity: 1,
         color: 'white',
@@ -172,25 +170,13 @@ function mouseoverFunction(e) {
         fillOpacity: 1
     });
     if (!L.Browser.ie && !L.Browser.opera) {
-        layer.bringToFront();
+        geojson1.bringToFront();
     }
 }
 
 
-  // var pop = feature.properties.Organization;
-  // layer.openPopup();
-
-  // var pop = feature.properties.Organization
-  // e.bindPopup(pop);
-
-
-
-
-  //  $('#infoWindow').html(layer.feature.properties.Organization + '<br>' + '<h4>' + layer.feature.properties.Category + '</h4>');
-  // }
-
 function resetHighlight(e) {
-    geojson.resetStyle(e.target);
+    geojson1.resetStyle(e.target);
     // this.closePopup();
 }
 
@@ -207,60 +193,28 @@ function onEachFeature(feature, layer) {
 
 
 
-
-
-  // $.getJSON('data/biz.geojson', function(Biz) {
-
     geojson1 = L.geoJSON(resta, {
       style: style,
       onEachFeature: onEachFeature,
       pointTolayer: function (feature, latlng) {
-        return L.circleMarker(latlng, bizmarker);
+     
+
+        return L.marker(latlng, {icon: foodicon});
       }
     }).addTo(map);
 
+
+// pa.forEach(function(p) {
+//   var mar = L.marker(p.coord, {icon: parking}).addTo(map);
+//   mar.bindPopup("<div id='popm'>" + p.name + "</div>")
+// });
+
+// resta.forEach(function(e) {
+//   var foodi = L.marker(e.features.geometry.coordinates, {icon: foodicon}).addTo(map);
+//   foodi.bindPopup()
+// });
+
  
-    //  geojson2 = L.geoJSON(otherf, {
-    //   style: style,
-    //   onEachFeature: onEachFeatureb,
-    //   pointTolayer: function (feature, latlng) {
-    //     return L.circleMarker(latlng, bizmarker);
-    //   }
-    // }).addTo(map);
-
-    //   geojson3 = L.geoJSON(services, {
-    //   style: style,
-    //   onEachFeature: onEachFeaturec,
-    //   pointTolayer: function (feature, latlng) {
-    //     return L.circleMarker(latlng, bizmarker);
-    //   }
-    // }).addTo(map);
- 
-    //  geojson4 = L.geoJSON(retail, {
-    //   style: style,
-    //   onEachFeature: onEachFeatured,
-    //   pointTolayer: function (feature, latlng) {
-    //     return L.circleMarker(latlng, bizmarker);
-    //   }
-    // }).addTo(map);
-
-    //  geojson5 = L.geoJSON(beauhea, {
-    //   style: style,
-    //   onEachFeature: onEachFeaturee,
-    //   pointTolayer: function (feature, latlng) {
-    //     return L.circleMarker(latlng, bizmarker);
-    //   }
-    // }).addTo(map);
-
-
-    //   geojson = L.geoJSON(others2, {
-    //   style: style,
-    //   onEachFeature: onEachFeature2,
-    //   pointTolayer: function (feature, latlng) {
-    //   return L.circleMarker(latlng, bizmarker);
-    //   }
-    // }).addTo(map);
-
 
 //popupopen center
 map.on('popupopen', function(e) {
@@ -297,11 +251,18 @@ dt.forEach(function(d) {
   mar5.bindPopup("<div id='popm'>" + d.name + "</div>")
 });
 
+
+
+
+
+
+
 $("#info").click(function() {
 $("#aboutModal").modal("show");
 $(".navbar-collapse.in").collapse("hide");
   return false;
     });
+
 
 
 $(document).ready(function () {
@@ -310,35 +271,34 @@ $(document).ready(function () {
 
       listIt += "<li>";
       listIt += "<a id='" + resta.features[i].properties.OBJECTID+ "'><div id='middd' style='height:150px;>'><div id='m2' class='col-md-4'><img class='img-responsive' onerror='this.parentNode.removeChild(this)' src='img2/"+resta.features[i].properties.OBJECTID+".jpg'></div>";
-      listIt += "<div class='col-md-8'>";
+      listIt += "<div class='col-md-1'></div><div class='col-md-7'>";
       listIt += "<h5>" +  resta.features[i].properties.Organization + "&nbsp; </h5>";
       listIt += "<p><span class='glyphicon glyphicon-map-marker' aria-hidden='true'></span>&nbsp;" + resta.features[i].properties.Address;
       listIt += "<br><span class='glyphicon glyphicon-earphone' aria-hidden='true'></span>&nbsp;" + resta.features[i].properties.Phone;
-      listIt += "<br><span class='glyphicon glyphicon-globe' aria-hidden='true'></span>&nbsp;" + "<a href='http://" + resta.features[i].properties.Web + "' target='_blank'>Website</a>&nbsp;</p></a>";
+      listIt += "<br><span class='glyphicon glyphicon-globe' aria-hidden='true'></span>&nbsp;" + "<a href='http://" + resta.features[i].properties.Web + "' target='_blank'>Website</a>&nbsp;</p>";
   
     // MODAL
-      listIt += "<button type='button' class='btn btn-primary btn-sm' data-toggle='modal' data-target='#myModal'>";
-      listIt += "launch";
+      listIt += "<button type='button' id='modalbut' class='btn btn-primary btn-sm modalbut' data-toggle='modal' data-target='#myModal'>";
+      listIt += "Menu";
       listIt += "</button>";
       listIt += "<div class='modal fade' id='myModal' tabindex='-1' role='dialog' aria-labelledby='myModalLabel'>";
       listIt += "<div class='modal-dialog' role='document'>";
-      listIt += "<div class='modal-content'>";
+      listIt += "<div class='modal-content' id=''>";
       listIt += "<div class='modal-header'>";
       listIt += "<button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>";
-      listIt += "<h4 class='modal-title' id='myModalLabel'>Modal title</h4>"
+      listIt += "<h4 class='modal-title' id='myModalLabel'>" + resta.features[i].properties.Organization + "</h4>"
       listIt += "</div>";
-      listIt += "<div class='modal-body'>";       
-      listIt += "...";
-      listIt += "</div>";
+      listIt += "<div class='modal-body'>" + resta.features[i].properties.html + "</div>";       
+ 
       listIt += "<div class='modal-footer'>";
-      listIt += "<button type='button' class='btn btn-default' data-dismiss='modal'>Close</button>";
+      listIt += "<button type='button' id='closeb' class='btn btn-default' data-dismiss='modal'>Close</button>";
       listIt += "</div>";
       listIt += "</div>";
       listIt += "</div>";
       listIt += "</div>";
   // END MODAL
 
-      listIt += "</div></div></li>";
+      listIt += "</a></div></div></li>";
               
 
       resta.features.sort(function (a, b) {
@@ -359,12 +319,6 @@ $(document).ready(function () {
     $("#resta").html(listIt);
 
 
-    // $("#resta").click(function(e){
-    //   $('#results').css('z-index', 100);
-    //   $('.dropdown-menu').css('z-index', 600);
-    // });
-
-// ********************
     $("#resta li a").mouseover(function(e){
       e.stopPropagation();
       
@@ -372,27 +326,49 @@ $(document).ready(function () {
       geojson1.eachLayer(function(feature){
 
         if(feature.feature.properties.OBJECTID==id) {
-        feature.openPopup();
+         feature.openPopup();
       }
   });
 });
 
-
-
-
-
-
-
 });
 
 
+
+
+$("#modalbut").click(function(event) {
+$("#myModal").modal("show");
+
+    event.preventDefault();
+    var clickedLink = $(event.currentTarget); 
+    var currentImage = clickedLink.children('img'); // use .find() if necessary
+
+    // JSON should be automatically converted to an Object
+    var comments = currentImage.data('comments'); 
+
+}
+// var id = $(this)[0].id;
+// geojson1.eachLayer(function(feature){
+
+//   if(feature.feature.properties.OBJECTID==id) {
+//     $(".modal-content").id
+//   }
+
+
+
+  // var id = $(".modal-content")[0].id;
+     
+  //       geojson1.eachLayer(function(feature){
+  //         if(feature.feature.properties.OBJECTID==id) {
+  //         feature.openPopup();
+  //       }
+
+  //       });
 
 
 $("#map").on('click', function(f) {
   f.stopPropagation();
 });
-
-
 
 
  $("#source").click(function(e) {
@@ -468,43 +444,8 @@ $("#map").on('click', function(f) {
  e.stopPropagation();
  $("#results").hide()
 
-
-$('#search').focus(
-    function(){
-        $(this).val('');
-    });
-
+});
 
 
 });
 
-
-
-$(function() {
-    // Change this selector to find whatever your 'boxes' are
-    var boxes = $(".dropdown .dropdown-menu");
-
-    // Set up click handlers for each box
-    boxes.click(function() {
-        var el = $(this), // The box that was clicked
-            max = 0;
-
-        // Find the highest z-index
-        boxes.each(function() {
-            // Find the current z-index value
-            var z = parseInt( $( this ).css( "z-index" ), 10 );
-            // Keep either the current max, or the current z-index, whichever is higher
-            max = Math.max( max, z );
-        });
-
-        // Set the box that was clicked to the highest z-index plus one
-        el.css("z-index", max + 1 );
-    });
-});
-
-
-
-// $(".dropdown .open").click(function(e){
-//                                 $('#results').css('z-index', 100);
-//                                 $('.dropdown-menu').css('z-index', 600);
-//                                 });

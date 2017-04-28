@@ -1,6 +1,8 @@
   body, html {
-    padding: 10%;
-      font-family: 'Helvetica Neue';
+    padding-top: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+    font-family: 'Helvetica Neue';
     font-size: 11px;
     font-weight: 300;
     background: transparent !important;
@@ -13,6 +15,14 @@
  /* -webkit-overflow-scrolling: touch;*/
   }
 
+
+  #bootstrap-overrides .leaflet-marker-icon {
+    width:30px;
+    height: 41px;
+
+}
+
+
   @font-face {
     font-family: proxima-nova;
     src: url('proximanova-regular.ttf');
@@ -23,13 +33,24 @@
     src: url('proximanova-semibold.ttf');
   }
 
+  #bootstrap-overrides button{
+  cursor:pointer;
+}
   #bootstrap-overrides img.img-responsive {
     margin-top: 12px;
     cursor: pointer; 
     cursor: hand; 
     max-width: 150px;
   }
+#bootstrap-overrides .btn-primary {
+  width: 140px;
+  background-color: #2D96FF;
+  border-color: #1476C6;
+}
 
+#bootstrap-overrides .modal-dialog {
+  margin-top: 10%;
+}
   #bootstrap-overrides .col-md-6 {
     padding-left: 0px;
     padding-right: 0px;
@@ -93,6 +114,8 @@
     float:left;
     width: 100%;
     min-width: 142px;
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
   }
 
   #bootstrap-overrides .leaflet-popup-close-button {
@@ -522,17 +545,19 @@
 
 }
 
-.#bootstrap-overrides .leaflet-popup-content-wrapper h6,
+#bootstrap-overrides .leaflet-popup-content-wrapper h6,
 {
     font-size: 10px;
 }
 
-.btn-group>.btn:first-child {
+#bootstrap-overrides .btn-group>.btn:first-child {
     font-family: Lato;
     font-weight: 600;
 }
 
-
+#closebut {
+  float:right;
+}
 .input-group {
   padding-top: 0px;
 }
@@ -542,7 +567,7 @@
 }
 
 #bootstrap-overrides .btn {
-  width: 100%;
+  width: 160px;
   float: left;
   border-radius: 2px;
 /*  padding: 10px;*/
@@ -607,16 +632,16 @@ overflow:auto;
 }*/
 
 
-#bootstrap-overrides .col-md-8 {
+#bootstrap-overrides .col-md-7 {
   text-align: left;
 }
 
-#bootstrap-overrides .col-md-8 a h5 {
+#bootstrap-overrides .col-md-7 a h5 {
   font-family: Lato;
   font-size: 16px;
 }
 
-#bootstrap-overrides .col-md-8 a p {
+#bootstrap-overrides .col-md-7 a p {
 
   font-size: 12px;
 }
@@ -663,7 +688,7 @@ overflow:auto;
 /*restaurants / bars*/
 #bootstrap-overrides .btn-danger {
   color: #fff;
-  background-color: #C95260;
+  background-color: #bbb;
   border-color: #C0392B;
 }
 
@@ -693,13 +718,13 @@ overflow:auto;
 }
 
 /*otherfood*/
-#bootstrap-overrides .btn-primary {
+/*#bootstrap-overrides .btn-primary {
   color: #fff;
   background-color: #66C2A5;
   border-color: #6A958F;
-}
+}*/
 
-#bootstrap-overrides .btn-primary:hover,
+/*#bootstrap-overrides .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active,
 .btn-primary.active,
@@ -708,7 +733,7 @@ overflow:auto;
   background-color: #17A589;
   border-color: #51817A;
 }
-
+*/
 #bootstrap-overrides #otherf {
   border-color: #f0ad4e;
   border-radius: 0px;
@@ -949,7 +974,7 @@ font-size: 15px;
 
 /*POPUP COLOR*/
 #bootstrap-overrides #ona {
-  background-color: #C95260;
+  background-color: #2D96FF;
 
 }
 
@@ -982,6 +1007,19 @@ font-size: 15px;
     max-width: 120px;
   }
 
+#bootstrap-overrides li {
+  height: 230px;
+}
+
+#bootstrap-overrides .col-md-7 {
+  text-align: center;
+}
+
+#bootstrap-overrides .btn-primary {
+  text-align: center;
+  float: none;
+}
+
 }
 
 @media screen and (max-width: 500px) {
@@ -997,8 +1035,13 @@ font-size: 15px;
     cursor: hand; 
     max-width: 120px;
   }
+#bootstrap-overrides .btn-primary {
+  width: 60px;
+}
 
-
+#bootstrap-overrides li {
+  height: 230px;
+}
 
 #bootstrap-overrides #sm{
   display:none;
