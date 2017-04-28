@@ -303,34 +303,23 @@ $(".navbar-collapse.in").collapse("hide");
   return false;
     });
 
-// <img id='im2' height='80px' class'img-responsive' onerror='this.parentNode.removeChild(this)' src='img2/" + resta.features[i].properties.OBJECTID+".jpg' />
 
 $(document).ready(function () {
   var listIt = "";
     for (var i = 0; i < resta.features.length; i++){
-      
-      // listIt += "<ul class='col-md-3'><img height='80px' class='img-responsive' onerror='this.parentNode.removeChild(this)' src='img2/"+resta.feature[i].properties.OBJECTID+".jpg' alt='"+ resta.feature[i].feature.properties.Organization +"' /></ul> ";
-
 
       listIt += "<li>";
-
       listIt += "<a id='" + resta.features[i].properties.OBJECTID+ "'><div id='middd' style='height:150px;>'><div id='m2' class='col-md-4'><img class='img-responsive' onerror='this.parentNode.removeChild(this)' src='img2/"+resta.features[i].properties.OBJECTID+".jpg'></div>";
-      //<div class='col-sm-3 col-md-3'><img height='80px' class='img-responsive' onerror='this.parentNode.removeChild(this)' src='img2/"+resta.features[i].properties.OBJECTID+".jpg'></div>";
-      // listIt += "<div class='col-sm-9 col-md-9'>"
-     
-   
-
       listIt += "<div class='col-md-8'>";
       listIt += "<h5>" +  resta.features[i].properties.Organization + "&nbsp; </h5>";
       listIt += "<p><span class='glyphicon glyphicon-map-marker' aria-hidden='true'></span>&nbsp;" + resta.features[i].properties.Address;
       listIt += "<br><span class='glyphicon glyphicon-earphone' aria-hidden='true'></span>&nbsp;" + resta.features[i].properties.Phone;
       listIt += "<br><span class='glyphicon glyphicon-globe' aria-hidden='true'></span>&nbsp;" + "<a href='http://" + resta.features[i].properties.Web + "' target='_blank'>Website</a>&nbsp;</p></a>";
   
-
+    // MODAL
       listIt += "<button type='button' class='btn btn-primary btn-sm' data-toggle='modal' data-target='#myModal'>";
       listIt += "launch";
       listIt += "</button>";
-
       listIt += "<div class='modal fade' id='myModal' tabindex='-1' role='dialog' aria-labelledby='myModalLabel'>";
       listIt += "<div class='modal-dialog' role='document'>";
       listIt += "<div class='modal-content'>";
@@ -347,36 +336,10 @@ $(document).ready(function () {
       listIt += "</div>";
       listIt += "</div>";
       listIt += "</div>";
-
-
-         // listIt +=     "<button class='well well-sm' id='info' data-target='.navbar-collapse.in'><center><span class='glyphicon glyphicon-info-sign' aria-hidden="true"></span></center>";
-         // listIt +=     "</button><div class='modal fade" id="aboutModal" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" id="modaltop">';
-         //  listIt +=     '<div class="modal-content"><div class="modal-header">';
-         //    listIt +=   '<button class="close" type="button" data-dismiss="modal" aria-hidden="true">&times;</button>'
-         //      listIt +=  '<h3 class="modal-title" style="float:left;">Source</h3></div>';
-
-         //      listIt += '<div class="modal-body"><ul class="nav nav-tabs nav-justified" id="aboutTabs"></ul> ';                  
-         //        listIt += '<div class="tab-content" id="aboutTabsContent"><div class="tab-pane fade active in" id="about">';
-         //          listIt += '<div class="panel panel-primary">';
-         //           listIt +=  '<div class="panel-heading"><h3 style="margin-top:0px; margin-bottom:0px;">Credits and Acknowledgments</h3></div>';
-                                  
-         //            listIt +=  '<ul class="list-group"><li class="list-group-item" style="border-bottom-width:0px;">;'
-         //               listIt +=   '<li class="list-group-item" style="border-bottom-width:0px;"></li>';
-                                  
-         //               listIt += '<li class="list-group-item">Map made by <a href="http://www.lucykang.com" target="_blank">Lucy Kang</a>, Sept. 2016.</li></ul>';
-
-                                
-
-         //                 listIt += '</div><div class="modal-footer"><button type="button" id="closeb" style="width:90px;" class="btn btn-default" data-dismiss="modal">Close</button>';                          
-         //                  listIt += '</div></div></div></div></div></div></div>'
-                
-
-
-
+  // END MODAL
 
       listIt += "</div></div></li>";
               
-      
 
       resta.features.sort(function (a, b) {
       var aa = a.properties.Organization;
