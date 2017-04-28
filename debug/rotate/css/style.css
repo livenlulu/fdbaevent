@@ -1,0 +1,1084 @@
+  body, html {
+    padding: 10%;
+      font-family: 'Helvetica Neue';
+    font-size: 11px;
+    font-weight: 300;
+    background: transparent !important;
+    background-color: transparent !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    -webkit-backface-visibility: visible;
+ /* -webkit-overflow-scrolling: touch;*/
+  }
+
+  @font-face {
+    font-family: proxima-nova;
+    src: url('proximanova-regular.ttf');
+  }
+
+  @font-face {
+    font-family: proxima-nova-s;
+    src: url('proximanova-semibold.ttf');
+  }
+
+  #bootstrap-overrides img.img-responsive {
+    margin-top: 12px;
+    cursor: pointer; 
+    cursor: hand; 
+    max-width: 150px;
+  }
+
+  #bootstrap-overrides .col-md-6 {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  #bootstrap-overrides .pic {
+    width: 25%;
+    float: left;
+    list-style-type: none;
+  }
+
+  body#bootstrap-overrides {
+    font-size: 11px;
+  }
+
+  #sea {
+
+    line-height: 0.9;
+        border-radius: 2px
+
+  }
+
+
+  #bootstrap-overrides hr {
+    border-top: 1px solid #999;
+    margin-right: 0px;
+  }
+
+
+  #bootstrap-overrides #lef2 {
+    width: 30%;
+  }
+
+  #bootstrap-overrides #middd {
+    width: 100%;
+    border-top: 1px solid #1A1F2C;
+
+  }
+
+
+  #bootstrap-overrides #rig2 {
+    width: 70%;
+  }
+
+  #bootstrap-overrides #midd {
+    width: 100%;
+    min-width: 342px;
+  }
+
+  #bootstrap-overrides #topp {
+/*    margin-top: 30px;*/
+  }
+
+  #bootstrap-overrides #cen {
+    padding-left: 0px;
+    padding-right: 0px;
+    
+  }
+
+  #bootstrap-overrides #sideb {
+    float:left;
+    width: 100%;
+    min-width: 142px;
+  }
+
+  #bootstrap-overrides .leaflet-popup-close-button {
+    z-index: 1;
+  }
+
+  #bootstrap-overrides #sm {
+    width: 12.5%;
+    height: 470px;
+    float: left;
+  }
+
+  #bootstrap-overrides #sm2 {
+    width: 12.5%;
+    height: 470px;
+    float: right;
+  }
+
+  #bootstrap-overrides #lef {
+    width: 58%;
+    min-width: 198px;
+    padding-left: 0px;
+    float:left;
+    position: relative;
+    padding-right: 20px;
+    background-color: #fff; 
+  }
+
+  #bootstrap-overrides #rig {
+    width: 42%;
+    padding-right:0px;
+    padding-left: 0px;
+/*    min-width: 142px;*/
+    float: left;
+    position: relative;
+
+  }
+
+  #bootstrap-overrides #source a {
+    color: black;
+    font-weight: 500;
+  }
+
+  #bootstrap-overrides .list-group li a {
+    font-family: Roboto;
+    font-weight: 300;
+  }
+
+  #bootstrap-overrides {
+    outline:none;
+  }
+
+  #bootstrap-overrides h6 {
+    font-size: 10px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    font-family: Roboto;
+    color: #fff;
+    font-weight: 300;
+  }
+
+  #bootstrap-overrides h5 {
+    font-size: 12px;
+    margin-bottom: 5px;
+    font-family: Lato;
+    margin-top:0px;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    line-height: 1.1;
+  }
+
+  #bootstrap-overrides h1 {
+    font-size: 13px;
+    margin-top: 2px;
+    margin-bottom: 5px;
+    font-family: Montserrat;
+    color: #fff;
+    font-weight: 700;
+  } 
+
+  #bootstrap-overrides h4 {
+    font-size: 12px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 6px;
+    padding-left: 15px;
+    padding-bottom: 11px;
+    font-family: Lato, 'Helvetica Neue';
+    color: #222;
+    text-align: left;
+    line-height: 1.3;
+/*    background-color: #eee;*/
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-color: #eee;
+    margin-right: 15px;
+  }
+
+  #bootstrap-overrides .leaflet-popup-content h4 {
+    font-family: Roboto;
+    line-height: 1.4;
+    letter-spacing: 0.2px;
+    font-weight: 400;
+    font-size: 11px;
+  }
+
+  #bootstrap-overrides li { 
+    cursor: pointer; 
+    cursor: hand; 
+    font-size: 11px;
+  }
+
+  #bootstrap-overrides ul { 
+    cursor: pointer; 
+    cursor: hand; 
+    padding-left: 0px;
+    margin-bottom: 0px;
+    list-style-type: none;
+  }
+
+
+  #bootstrap-overrides .main { 
+    cursor: pointer; 
+    cursor: hand; 
+  }
+
+  #bootstrap-overrides .dropdown .dropdown-menu {
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    display: block;
+    float: left;
+  }
+
+  #bootstrap-overrides a:hover {
+   
+    text-decoration: none;
+  }
+
+  #bootstrap-overrides a {
+    color: black;
+    
+  }
+
+  textarea:hover, 
+  input:hover, 
+  textarea:active, 
+  input:active, 
+  textarea:focus, 
+  input:focus,
+  button:focus,
+  button:active,
+  button:hover
+  {
+    outline:0px !important;
+    -webkit-appearance:none;
+  }
+  
+  #bootstrap-overrides .row {
+    margin: 0px;
+
+  }
+ 
+  #bootstrap-overrides h2 {
+    font-size: 20px;
+    font-family: Montserrat;
+    font-weight: 900;
+    margin-top: 4px;
+    margin-bottom: 3px;
+    letter-spacing: 1.5px;
+    margin-left: 0px;
+    color: #000;
+  }
+
+    #bootstrap-overrides h3 {
+    font-size: 13px;
+    font-family: Dosis;
+    text-align:left;
+    letter-spacing: 1px;
+    font-weight: 500;
+    margin-left:130px; 
+    color: #444;
+    top:10px;
+  }
+
+  #bootstrap-overrides .jumbotron {
+    padding-top: 8px;
+    padding-bottom: 5px;
+    width: 100%;
+    margin-bottom: 1px;
+
+    color: #232323;
+    background-color: #fff; 
+   /* background-color: #f1f0f0; */
+    min-width: 342px;
+    border-radius: 2px;
+    border: 0px solid #ddd;
+ 
+  }
+
+/*  #bootstrap-overrides #flogo2 {
+    vertical-align: middle;
+    float: right;
+    min-width: 0px;
+    min-height: 0px;
+    height: 88px;
+    display: inline;
+    top: 6px;
+    right: 2%;
+    position: absolute;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+  }
+*/
+
+#bootstrap-overrides #flogo3 {
+  display: inline;
+  float: left;
+  min-width: 0px;
+    min-height: 0px;
+    height: 62px;
+    display: inline;
+    top: 17px;
+    left: 18px;
+    position: absolute;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+
+}
+  #bootstrap-overrides .panel h3 {
+    font-size: 13px;
+    font-family: Maven Pro;
+    margin-left: 0px;
+    color: #fff;
+  }
+
+  #bootstrap-overrides h3.modal-title {
+    font-size: 17px;
+    font-family: Maven Pro;
+    margin-left: 0px;
+  }
+
+  #bootstrap-overrides #closeb {
+    width:10px;
+    float:right; 
+    font-family: Roboto;
+    border-radius: 4px;
+    min-width: 90px;
+    cursor: pointer; 
+    cursor: hand; 
+  }
+
+  #bootstrap-overrides #aboutModal a {
+    color:black;
+    font-size: 11px;
+  }
+
+
+  #bootstrap-overrides .popover-title h3 {
+    font-size: 15px;
+    font-family: Oswald;
+    background-color: #fff;
+  }
+
+
+  #map {
+    margin-top: 0px;
+    width: 100%;
+    height: 551px;
+    border: solid 1px #ccc;
+    
+/*    max-height: 603px;*/
+  }
+
+  img {
+    opacity: 1;
+    vertical-align: middle;
+  }
+
+  #bootstrap-overrides .leaflet-control-zoom {
+    z-index: 200;
+  }
+
+/*
+  #infoWindow {
+    background: #fff;
+    color: #000;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 12px;
+    text-align: left;
+    position: absolute;
+    font-family: Lato;
+    width: auto;
+    display: block;
+    left: 10px;
+    top: 540px;
+    font-weight: 400;
+    z-index: 300;
+  }*/
+
+ #bootstrap-overrides .input-lg {
+  height: 38px;
+  background-color: #f1f0f0;
+  border-radius: 2px;
+  margin-bottom: 0px;
+  font-size: 15px;
+  left: 0px;
+  width: 80%;
+}
+
+ #bootstrap-overrides .input-group {
+  margin-bottom: 2px;
+ }
+
+ #bootstrap-overrides #results {
+  position: absolute;
+  background-color: #eee;
+  width: 100%;
+   overflow:scroll;
+   min-height: 412px;
+   max-height: 511px;
+   border: solid 1px #E4E4E4;
+
+}
+
+  #bootstrap-overrides #results #seapop ul:hover {
+    background-color: #fff;
+  }
+
+
+  #bootstrap-overrides #results #seapop ul {
+    cursor: pointer; 
+    cursor: hand; 
+    background-color: #eee;
+  }
+
+  #bootstrap-overrides #results #seapop ul > p {
+    padding-bottom: 15px;
+  }
+
+  #bootstrap-overrides p {
+  margin: 0px;
+  padding-bottom: 10px;
+  }
+
+
+ #bootstrap-overrides .form-group {
+  margin-bottom: 1px;
+  }
+
+
+#bootstrap-overrides .leaflet-popup-tip-container {
+  font-family: Lato;
+  position: relative;
+  text-align: left;
+  left: 0%;
+}
+
+
+#bootstrap-overrides .leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar {
+  border: 1px solid rgba(0,0,0,0.2);
+}
+
+#bootstrap-overrides .leaflet-touch .leaflet-bar a {
+  width: 27px;
+  height: 27px;
+  line-height: 27px;
+}
+
+#bootstrap-overrides .leaflet-popup-content h5{
+  padding-left: 15px;
+  padding-top: 15px;
+  padding-right: 15px;
+  padding-bottom: 2px;
+  background-color: #eee;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-family: Raleway;
+  font-weight: 700;
+  color: #fff;
+}
+
+
+#bootstrap-overrides .leaflet-popup-content h6{
+  padding-left: 15px;
+  padding-top: 3px;
+  background-color: #eee;
+  padding-bottom: 5px;
+  padding-right: 10px;
+}
+
+#bootstrap-overrides #popm {
+  padding:15px;
+}
+
+#bootstrap-overrides .leaflet-popup {
+  margin-bottom: 0px;
+}
+
+#bootstrap-overrides .leaflet-popup-content {
+  /*margin: 13px 19px;*/
+  margin: 0px;
+
+}
+#bootstrap-overrides .leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+
+    font-family: Lato;
+    font-weight: 500;
+    font-size: 12px;
+    color: #000;
+   position: initial;
+  text-align: left;
+}
+
+#bootstrap-overrides .leaflet-popup-content-wrapper {
+  border-radius: 10px;
+  border-color: #eee;
+
+}
+
+.#bootstrap-overrides .leaflet-popup-content-wrapper h6,
+{
+    font-size: 10px;
+}
+
+.btn-group>.btn:first-child {
+    font-family: Lato;
+    font-weight: 600;
+}
+
+
+.input-group {
+  padding-top: 0px;
+}
+
+.btn-info .btn-lg {
+  width: 300px;
+}
+
+#bootstrap-overrides .btn {
+  width: 100%;
+  float: left;
+  border-radius: 2px;
+/*  padding: 10px;*/
+  font-family: Montserrat;
+  font-weight: 800;
+  min-width: 142px;
+  font-size: 10px;
+  z-index:10;
+  position: relative;
+  height: 32px;
+  letter-spacing: .50px;
+  text-transform: uppercase;
+
+}
+
+.btn-group {
+  width: 280px;
+  float: left;
+}
+
+
+#bootstrap-overrides .dropdown-menu {
+overflow:auto;
+  padding-bottom:0px;
+  position:static;
+  list-style-type:none;
+  width: 100%;
+  font-family: Lato;
+  font-weight: 800;
+  overflow:scroll;
+  min-width: 142px;
+  font-size: 10px;
+  background-color: #fff;
+
+/*  box-shadow: none;*/
+}
+
+  #bootstrap-overrides .dropdown.open .dropdown-menu {
+    max-height: 247px;
+    opacity: 1;
+    overflow:scroll;
+    margin-bottom: 2px;
+    position: relative;
+  
+  }
+
+#bootstrap-overrides .divider {
+  margin: 0px;
+  width: 90%;
+  color: #000;
+}
+
+#bootstrap-overrides .dropdown-menu > li {
+  position: relative;
+/*  z-index: 10;*/
+}
+
+/*#bootstrap-overrides .dropdown-menu ul {
+  list-style-type: none;
+  display: inline-block;
+  margin: 0;
+}*/
+
+
+#bootstrap-overrides .col-md-8 {
+  text-align: left;
+}
+
+#bootstrap-overrides .col-md-8 a h5 {
+  font-family: Lato;
+  font-size: 16px;
+}
+
+#bootstrap-overrides .col-md-8 a p {
+
+  font-size: 12px;
+}
+
+
+#bootstrap-overrides .dropdown-menu ul:hover {
+  background-color: #f1f0f0;
+}
+
+#bootstrap-overrides .dropdown-menu > li > a {
+  color: #333;
+  line-height: 1.42857143;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  font-size: 11px;
+  /*text-align: -webkit-center;*/
+  font-family: 'Helvetica Neue';
+/*  text-shadow: 0 1px 0 rgba(0,0,0,0.02);*/
+  -webkit-font-smoothing: antialiased;
+  font-weight: 300;
+/*  -webkit-tap-highlight-color: rgba(0,0,0,0);*/
+  margin-bottom: 0px;
+}
+
+
+
+#bootstrap-overrides .dropdown-menu li .m-pub:hover:after {
+  position: absolute;
+  margin-left: -10px;
+  margin-top: 15px;
+  border-left: 0;
+  border-bottom: 17px solid transparent;
+  border-top: 17px solid transparent;
+  border-left: 14px solid #333333;
+  transform: rotate(-90deg);
+  background: none;
+}
+
+
+
+
+
+
+/*restaurants / bars*/
+#bootstrap-overrides .btn-danger {
+  color: #fff;
+  background-color: #C95260;
+  border-color: #C0392B;
+}
+
+#bootstrap-overrides .btn-danger:hover,
+.btn-danger:focus,
+.btn-danger:active,
+.btn-danger.active,
+.open .dropdown-toggle.btn-danger {
+  color: #fff;
+  background-color: #CB4335;
+  border-color: #D53E4F;
+}
+
+#bootstrap-overrides #resta {
+  border-color: #c9302c;
+  border: 0px;
+  border-radius: 0px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  position: relative;
+  overflow: scroll;
+  max-height:247px
+  opacity: 1;
+  margin-bottom: 0px;
+  height: 550px;
+  background-color: #fff;
+}
+
+/*otherfood*/
+#bootstrap-overrides .btn-primary {
+  color: #fff;
+  background-color: #66C2A5;
+  border-color: #6A958F;
+}
+
+#bootstrap-overrides .btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+    color: #fff;
+  background-color: #17A589;
+  border-color: #51817A;
+}
+
+#bootstrap-overrides #otherf {
+  border-color: #f0ad4e;
+  border-radius: 0px;
+}
+
+#bootstrap-overrides .open>.dropdown-toggle.btn-warning:focus, .open>.dropdown-toggle.btn-warning:hover {
+  border-color: #d07d07;
+}
+
+/*services*/
+#bootstrap-overrides .btn-warning {
+  color: #fff;
+  background-color: #ec971f;
+ /* border-color: #D4AC0D;*/
+}
+
+/*#bootstrap-overrides .btn-warning:hover,
+.btn-warning:focus,
+.btn-warning:active,
+.btn-warning.active,
+.open .dropdown-toggle.btn-warning {
+  color: #fff;
+  background-color: #D4AC0D;
+  border-color: #F4D03F;
+}*/
+
+#bootstrap-overrides #services {
+  border-color: #F4D03F;
+  border-radius: 0px;
+}
+
+
+/*retail*/
+#bootstrap-overrides .btn-success {
+   color: #fff;
+  background-color: #F4D03F;
+  border-color: #D4AC0D;
+}
+
+#bootstrap-overrides .btn-success:hover,
+.btn-success:focus,
+.btn-success:active,
+.btn-success.active,
+.open .dropdown-toggle.btn-success {
+  color: #fff;
+  background-color: #F1C100;
+  border-color: #CBA300;
+
+}
+
+#bootstrap-overrides #retail {
+  border-color: #66c2a5;
+  border-radius: 0px;
+}
+
+/*beauty n health*/
+#bootstrap-overrides .btn-info {
+  color: #fff;
+  background-color: #3288BD;
+  border-color: #2F6391;
+}
+
+#bootstrap-overrides .btn-info:hover,
+.btn-info:focus,
+.btn-info:active,
+.btn-info.active,
+.open .dropdown-toggle.btn-info {
+  color: #fff;
+  background-color: #1F73A4;
+  border-color: #205687;
+}
+
+#bootstrap-overrides #beauhea {
+  border-color: #3288bd;
+  border-radius: 0px;
+}
+
+#bootstrap-overrides .open .dropdown-menu {
+    position: relative;
+}
+
+#bootstrap-overrides #direct {
+  background-color: #eee;
+  height:100px;
+  width:100%;
+  text-align: left;
+  font-family: Lato;
+  letter-spacing: 0.1em;
+  font-size: 11px;
+  font-weight: 700;
+  color: #222;
+  opacity: .9;
+  float: left;
+  border-radius: 2px;
+  min-width: 142px;
+  overflow:scroll;
+  margin-bottom: 0px;
+  border: 1px solid #D5DBDB;
+  text-transform: none;
+}
+
+#bootstrap-overrides #caro {
+  padding-top: 0px;
+  padding-bottom: 20px;
+}
+
+
+#bootstrap-overrides #info {
+  position: absolute;
+  color: #000;
+  background-color: #D9D9D9;
+  border-color: #B6B6B6;
+  bottom:2%;
+  right: 2%;
+  text-align: left;
+  font-family: Lato;
+  font-size: 16px;
+  font-weight: 400;
+  opacity: 1;
+  float: left;
+  border-radius: 6px;
+  z-index: 10;
+  padding: 7px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 0px;
+}
+
+#bootstrap-overrides .glyphicon {
+
+  cursor: pointer; 
+    cursor: hand; 
+}
+
+#bootstrap-overrides #info:hover {
+  background-color: #bbb;
+  opacity: 0.9;
+}
+
+
+
+
+#bootstrap-overrides .popover-content {
+  z-index: 900;
+  left:20px;
+}
+
+#bootstrap-overrides .popover-title {
+  background-color: #fff;
+  font-size: 15px;
+  border-bottom: 0px;
+}
+
+#bootstrap-overrides .popover .fade .bottom .in {
+  left: 20px;
+}
+
+
+#bootstrap-overrides #source {
+  width: 72%;
+  border-radius: 0px;
+  border:0px;
+  font-family: Oswald;
+  text-align: left;
+  font-size: 12px;
+  min-width: 141px;
+  float: left;
+  margin-bottom: 0px;
+}
+
+#bootstrap-overrides #cf {
+  color:#884EA0;
+  font-size:15px;
+  vertical-align: -2px;
+}
+
+#bootstrap-overrides #vac {
+  color:#BEC2C3;
+  font-size:15px;
+  vertical-align: -2px;
+}
+
+#bootstrap-overrides #par {
+  color:#7ac27a;
+  font-size:15px;
+  vertical-align: -2px;
+}
+
+#bootstrap-overrides #ot {
+font-size: 15px;
+  vertical-align: -4px;
+}
+
+#bootstrap-overrides #oe {
+font-size: 15px;
+  vertical-align: -2px;
+
+}
+
+
+#bootstrap-overrides #imga {
+  height: 80px;
+}
+
+.wrapper {
+    max-width: 100%;
+    margin-top:0px;
+    padding: 0 0px 40px 0px;
+    margin: auto;
+    min-width: 342px;
+}
+
+#bootstrap-overrides .panel-group {
+  margin-bottom: 0px;
+}
+
+#bootstrap-overrides #modaltop {
+  margin-top: 10%;
+/*  position: absolute;
+  top: 25%;
+  left:25%;
+  overflow: hidden;*/
+}
+
+#headin2 {
+  margin-left: 12%;
+  text-transform: uppercase;
+  margin-top:10px; 
+  margin-bottom: 2px; 
+
+}
+
+#headin3 {
+  margin-right: 12%;
+  text-transform: uppercase;
+  padding-left: 90px;
+}
+
+/*POPUP COLOR*/
+#bootstrap-overrides #ona {
+  background-color: #C95260;
+
+}
+
+#bootstrap-overrides #onb {
+  background-color: #ec971f;
+
+}
+
+#bootstrap-overrides #onc {
+  background-color: #f4d03f;
+ 
+}
+
+#bootstrap-overrides #ond {
+  background-color: #66c2a5;
+ 
+}
+
+#bootstrap-overrides #one {
+  background-color: #3288bd;
+ 
+}
+/*POP*/
+
+@media screen and (max-width: 1000px) {
+#bootstrap-overrides img.img-responsive {
+    margin-top: 12px;
+    cursor: pointer; 
+    cursor: hand; 
+    max-width: 120px;
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+#bootstrap-overrides #flogo3 {
+/*  height: 48px;
+  box-shadow: 1px 1px 5px #888888;*/
+  display: none;
+}
+
+#bootstrap-overrides img.img-responsive {
+    margin-top: 12px;
+    cursor: pointer; 
+    cursor: hand; 
+    max-width: 120px;
+  }
+
+
+
+#bootstrap-overrides #sm{
+  display:none;
+}
+
+#bootstrap-overrides #sm2{
+  display:none;
+}
+
+#bootstrap-overrides .dropdown {
+  position: static;
+  /*pointer-events: auto;*/
+}
+
+#bootstrap-overrides h2 {
+  font-size: 14px;
+  font-family: Montserrat;
+  font-weight: 800;
+  margin-left: 20px;
+  margin-top: 3px;
+}
+
+
+#bootstrap-overrides h3 {
+  font-size: 11px;
+
+  margin-left: 20px;
+}
+
+#bootstrap-overrides .btn {
+  font-weight: 500;
+  font-size: 9px;
+}
+
+#midd {
+/*  min-width:342px;*/
+  position: relative;
+}
+
+#bootstrap-overrides .input-lg {
+  font-size: 14px;
+}
+
+#bootstrap-overrides #direct {
+  font-size: 10px;
+  font-weight: 400;
+}
+
+#bootstrap-overrides #map {
+  height: 511px;
+
+}
+
+#bootstrap-overrides .dropdown.open .dropdown-menu {
+    max-height: 207px;
+  
+}
+
+#bootstrap-overrides #results {
+ /* position: absolute;*/
+ min-height: 342px;
+ max-height: 442px;
+
+}
+
+#bootstrap-overrides h5 {
+ font-size: 10px;
+
+ margin-bottom: 4px;
+ font-weight: 400;
+}
+
+#bootstrap-overrides h6 {
+ font-size: 7px;
+}
+
+#bootstrap-overrides p {
+ font-size: 9px;
+ padding-bottom: 5px;
+}
+#headin3 { padding-left: 35px;
+
+}
