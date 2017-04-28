@@ -339,14 +339,7 @@ $(document).ready(function () {
 $("#modalbut").click(function(event) {
 $("#myModal").modal("show");
 
-    event.preventDefault();
-    var clickedLink = $(event.currentTarget); 
-    var currentImage = clickedLink.children('img'); // use .find() if necessary
 
-    // JSON should be automatically converted to an Object
-    var comments = currentImage.data('comments'); 
-
-}
 // var id = $(this)[0].id;
 // geojson1.eachLayer(function(feature){
 
