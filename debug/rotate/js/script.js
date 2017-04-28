@@ -327,17 +327,26 @@ $(document).ready(function () {
       listIt += "<br><span class='glyphicon glyphicon-globe' aria-hidden='true'></span>&nbsp;" + "<a href='http://" + resta.features[i].properties.Web + "' target='_blank'>Website</a>&nbsp;</p></a>";
   
 
-      listIt += "<button type='button' class='btn btn-primary btn-sm' data-toggle='modal' data-target='.navbar-collapse.in'>launch</button>";
+      listIt += "<button type='button' class='btn btn-primary btn-sm' data-toggle='modal' data-target='#myModal'>";
+      listIt += "launch";
+      listIt += "</button>";
+
       listIt += "<div class='modal fade' id='myModal' tabindex='-1' role='dialog' aria-labelledby='myModalLabel'>";
       listIt += "<div class='modal-dialog' role='document'>";
       listIt += "<div class='modal-content'>";
       listIt += "<div class='modal-header'>";
       listIt += "<button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>";
-      listIt += "<h4 class='modal-title' id='myModalLabel'>Modal title</h4></div>";
-      listIt += "<div class='modal-body'>        ...</div>";
+      listIt += "<h4 class='modal-title' id='myModalLabel'>Modal title</h4>"
+      listIt += "</div>";
+      listIt += "<div class='modal-body'>";       
+      listIt += "...";
+      listIt += "</div>";
       listIt += "<div class='modal-footer'>";
       listIt += "<button type='button' class='btn btn-default' data-dismiss='modal'>Close</button>";
-      listIt += "</div></div></div></div>";
+      listIt += "</div>";
+      listIt += "</div>";
+      listIt += "</div>";
+      listIt += "</div>";
 
 
          // listIt +=     "<button class='well well-sm' id='info' data-target='.navbar-collapse.in'><center><span class='glyphicon glyphicon-info-sign' aria-hidden="true"></span></center>";
