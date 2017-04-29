@@ -54,6 +54,9 @@ var dtrain = L.icon({
   iconAnchor: [15,5]
 });
 
+
+
+
 var pa = [
   {
     name: "122nd St Parking",
@@ -252,8 +255,30 @@ dt.forEach(function(d) {
 });
 
 
+var photob = L.icon({
+  iconUrl: 'img/photo.png',
+  shadowUrl: 'img/marker-shadow.png',
+  iconSize: [25,38],
+  iconAnchor: [-5,37],
+  shadowAnchor: [-5, 38],
+  popupAnchor:  [-3, -50]
+});
 
+var photobooth = [
+  {
+    name: "Photobooth @ Row House",
+    coord: [40.803568,-73.955765]
+  },
+  {
+    name: "Photobooth @ Angel of Harlem",
+    coord: [40.808037,-73.952420]
+  }
+]
 
+photobooth.forEach(function(d) {
+  var pb = L.marker(d.coord, {icon: photob}).addTo(map);
+  pb.bindPopup("<div id='popm'>" + d.name + "</div>")
+});
 
 
 
