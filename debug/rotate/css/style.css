@@ -1128,6 +1128,15 @@ font-size: 15px;
   max-height:510px;
 }
 
+#bootstrap-overrides #lef {
+  padding-right: 0px;
+  width: 40%;
+}
+
+#bootstrap-overrides #rig {
+ 
+  width: 50%;
+}
 
 #bootstrap-overrides p {
  font-size: 9px;
