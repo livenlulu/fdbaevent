@@ -1126,16 +1126,19 @@ font-size: 15px;
 
 #bootstrap-overrides #resta {
   max-height:510px;
+
 }
 
 #bootstrap-overrides #lef {
   padding-right: 0px;
-  width: 40%;
+  max-width:40%;
+/*  max-width: 170px;*/
 }
 
 #bootstrap-overrides #rig {
- 
-  width: 50%;
+/* max-width: 205px;*/
+ max-width:60%;
+  
 }
 
 #bootstrap-overrides p {
