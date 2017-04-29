@@ -1020,6 +1020,9 @@ font-size: 15px;
   float: none;
 }
 
+  body, html {
+    padding: 0px;
+  }
 }
 
 @media screen and (max-width: 500px) {
@@ -1029,6 +1032,9 @@ font-size: 15px;
   display: none;
 }
 
+  body, html {
+    padding: 0px;
+  }
 #bootstrap-overrides img.img-responsive {
     margin-top: 12px;
     cursor: pointer; 
@@ -1117,6 +1123,11 @@ font-size: 15px;
 #bootstrap-overrides h6 {
  font-size: 7px;
 }
+
+#bootstrap-overrides #resta {
+  max-height:510px;
+}
+
 
 #bootstrap-overrides p {
  font-size: 9px;
