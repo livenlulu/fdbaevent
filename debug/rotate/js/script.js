@@ -1,5 +1,5 @@
 var listIt = "";
-
+var markerMap = {};
 var layer = L.tileLayer('https://api.mapbox.com/styles/v1/livenlulu/ciu0azvas00322in5xzze3u48/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibGl2ZW5sdWx1IiwiYSI6ImNpZ3h0ZzltbzB1cTQ0cG0zamthcno1dmwifQ.vZrmbXCCq15ZVuF6g6vhkA',{
     attribution: ''
 });
@@ -193,7 +193,7 @@ function onEachFeature(feature, layer) {
     layer.on({
         mouseover: mouseoverFunction,
         mouseout: resetHighlight,
-        click: onMarClick
+        // click: onMarClick
     });
 }
 
@@ -213,32 +213,14 @@ function onEachFeature(feature, layer) {
 
 
 
-function onMarClick(e) {
-  var id = ((e.latlng.lng),toFixed(2)) + ',' + e.latlng.lat.toString();
-  
-  var id2 = $('.middd')[0].id;
-  // console.log(id2);
+// function onMarClick(e) {
 
+//     $(".middd").toggleClass("rhover");
 
-
-console.log(id)
-console.log(id2)
-    if(id2 == id )   
-  {
-
-    $(".middd").hover(function(e) {
-       e.stopPropagation();
-   $(this).addClass("rhover");
- },
- function(e) {
-  e.stopPropagation();
-  $(this).removeClass("rhover");
- });
-
-  }
+//   }
 
   
-}
+
   
  // },
  // function(e) {
@@ -262,7 +244,10 @@ console.log(id2)
       pointTolayer: function (feature, latlng) {
      
 
-        return L.marker(latlng, {icon: foodicon});
+       return marker = L.marker(latlng, bizmarker);
+        // markerMap[feature.feature.properties.OBJECTID] = marker;
+    
+        
       }
     }).addTo(map);
 
@@ -340,13 +325,14 @@ $(".navbar-collapse.in").collapse("hide");
 
 
 
+
 $(document).ready(function () {
 
   
     for (var i = 0; i < resta.features.length; i++){
 
       listIt += "<li>";
-      listIt += "<a id='" + resta.features[i].properties.OBJECTID+ "'><div class='middd' id=' "+resta.features[i].geometry.coordinates+"'style='height:150px;>'><div id='m2' class='col-md-4'><img class='img-responsive' onerror='this.parentNode.removeChild(this)' src='img2/"+resta.features[i].properties.OBJECTID+".jpg'></div>";
+      listIt += "<a id='" + resta.features[i].properties.OBJECTID+ "'><div class='middd' id='"+resta.features[i].properties.OBJECTID+"' style='height:150px;>'><div id='m2' class='col-md-4'><img class='img-responsive' onerror='this.parentNode.removeChild(this)' src='img2/"+resta.features[i].properties.OBJECTID+".jpg'></div>";
       listIt += "<div class='col-md-1'></div><div class='col-md-7'>";
       listIt += "<h5>" +  resta.features[i].properties.Organization + "&nbsp; </h5>";
       listIt += "<p><span class='glyphicon glyphicon-map-marker' aria-hidden='true'></span>&nbsp;" + resta.features[i].properties.Address;
@@ -375,7 +361,7 @@ $(document).ready(function () {
   // END MODAL
 
       listIt += "</a></div></div></li>";
-              
+        
 
       resta.features.sort(function (a, b) {
       var aa = a.properties.Organization;
@@ -393,9 +379,18 @@ $(document).ready(function () {
 
     }
     $("#resta").html(listIt);
+    
 
-    $("#resta li").hover(function(e) {
-       e.stopPropagation();
+    $(".middd").hover(function(e) {
+ //      var aId = $(this).id('aId');
+
+
+     
+ //      var marker = markerMap[aId];
+ // //       e.stopPropagation();
+
+ //  marker.openPopup(marker.getLatLng());
+ //  e.preventDefault()
    $(this).addClass("rhover");
  },
  function(e) {
@@ -425,6 +420,125 @@ $(document).ready(function () {
 
 
 
+$(window).load(function(){
+
+        $('#search').keyup(function(e){
+
+if ($(this).val().length == 0) {
+  $("#results").hide();
+
+ }
+ else
+  $("#results").show();
+
+            var searchField = $('#search').val();
+            var regex = new RegExp(searchField, "i");
+            var output = '<div class="row">';
+            var count = 1;
+
+            // $.getJSON('data/data.geojson', function(data) {
+            //   $.each(data, function(key, val){
+              geojson1.eachLayer(function(val){
+                
+                if ((val.feature.properties.Organization.search(regex) != -1) || (val.feature.properties.Address.search(regex) != -1)) {
+                  output += '<div class="dropdown" id="seapop">';
+                  output += '<ul id="' + val.feature.properties.OBJECTID +'">';
+                  output += '<div class="col-md-3"><img height="80px" class="img-responsive" onerror="this.parentNode.removeChild(this)" src="img2/'+val.feature.properties.OBJECTID+'.jpg" alt="'+ val.feature.properties.Organization +'" /></div>';
+                  output += '<div class="col-md-6">';
+                  output += '<h5>' + val.feature.properties.Organization + '</h5>';
+                  output += '<p>' + val.feature.properties.Address + '</p>'
+                  output += '</div><hr style="border-top: 1px solid #ddd; margin-bottom: 0px; margin-top:0px; width:90%;">';
+                  output += '</div>';
+                  output += '</div>';
+                  if(count%2 == 0){
+                    output += '</div><div class="row">'
+                  }
+                  count++;
+                }
+                //  if ((count-1) == 0) {
+                
+                //   $('#results').css('z-index', 100);
+                //   $('.dropdown-menu').css('z-index', 600);
+                // }
+
+
+              });
+
+
+              output += '</div>';
+
+              $('#results').html(output);
+              // console.log(count)
+
+              if ($('#results').css('display') == 'none')  {
+                    $('#results').css('z-index', 400);
+                    $('#results').css('position', 'absolute');
+                    $('#resta').css('z-index', 600);
+                }
+
+                if ($('#results').css('display') == 'block') 
+                {
+           
+                  $('#results').css('z-index', 400);
+                  $('#resta').css('z-index', 200)
+                                        .css('position', 'relative');
+                 
+                }
+
+                if ((count-1) == 0) {
+                  $('#results').hide();
+                  $('#results').css('z-index', 100);
+                  $('#results').css('position', 'absolute');
+                  $('#resta').css('z-index', 600);
+                }
+
+
+          $("#results #seapop ul").click(function(e){
+                      e.stopPropagation();
+
+                        var id3 = $(this)[0].id;
+                        geojson1.eachLayer(function(feature){
+                          if(feature.feature.properties.OBJECTID==id3) {
+                          feature.openPopup();
+                          }
+                       }); 
+
+//       $(".dropdown").on('click touchend', function() {
+//     $('.dropdown-menu').toggleClass("open");
+    
+// }); 
+
+
+
+
+
+        });
+                 });
+         });
+                     
+
+
+ $("#se1").click(function(e) {
+ e.stopPropagation();
+ $("#results").hide()
+
+ $("#resta").show()
+     $('#results').css('z-index', 100);
+     $('#resta').css('z-index', 600);
+
+
+
+$('#search').focus(
+    function(){
+        $(this).val('');
+    });
+
+
+});
+
+
+
+
 $(".modalbut").click(function(event) {
 
 
@@ -432,6 +546,8 @@ $(".modalbut").click(function(event) {
 $("#map").on('click', function(f) {
   f.stopPropagation();
 });
+
+
 
 
  $("#source").click(function(e) {
@@ -498,16 +614,15 @@ $("#map").on('click', function(f) {
  e.stopPropagation();
 });
 
- $("#innn").click(function(e) {
+
+
+
+
+  $("#innn").click(function(e) {
  e.stopPropagation();
 });
 
 
- $("#se1").click(function(e) {
- e.stopPropagation();
- $("#results").hide()
-
-});
 
 
 });
