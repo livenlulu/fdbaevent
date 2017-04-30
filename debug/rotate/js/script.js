@@ -447,7 +447,7 @@ if ($(this).val().length == 0) {
                   output += "<br><span class='glyphicon glyphicon-earphone' aria-hidden='true'></span>&nbsp;" + resta.features[a].properties.Phone;
                   output += "<br><span class='glyphicon glyphicon-globe' aria-hidden='true'></span>&nbsp;" + "<a href='http://" + resta.features[a].properties.Web + "' target='_blank'>Website</a>&nbsp;</p>";
                   
-                  output += "<button type='button' class='btn btn-primary btn-sm modalbut2' data-toggle='modal' data-target='#myModal"+a+"'>";
+                  output += "<button type='button' class='btn btn-primary btn-sm modalbut' data-toggle='modal' data-target='#myModal"+a+"'>";
                   output += "Menu";
                   output += "</button>";
 
@@ -535,7 +535,7 @@ if ($(this).val().length == 0) {
 // $('#myModal').appendTo("body").modal('show');
 
 
-$(".modalbut2").click(function(e){
+$("#results .modalbut").click(function(e){
                       
 $("#myModal").modal("show");
 $('#myModal').modal({backdrop: 'static', keyboard: false})  
