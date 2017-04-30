@@ -33,8 +33,9 @@
     src: url('proximanova-semibold.ttf');
   }
 
-  #bootstrap-overrides button{
-  cursor:pointer;
+  #bootstrap-overrides #resta button{
+  cursor: pointer;
+  cursor: hand; 
 }
   #bootstrap-overrides img.img-responsive {
     margin-top: 12px;
@@ -47,6 +48,12 @@
   background-color: #2D96FF;
   border-color: #1476C6;
 }
+
+#bootstrap-overrides .modalbut:hover {
+    background-color: #000;
+    cursor: pointer; 
+}
+
 
 #bootstrap-overrides .modal-dialog {
   margin-top: 10%;
@@ -999,7 +1006,7 @@ font-size: 15px;
 }
 /*POP*/
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 992px) {
 #bootstrap-overrides img.img-responsive {
     margin-top: 12px;
     cursor: pointer; 
