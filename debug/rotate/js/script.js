@@ -261,7 +261,7 @@ var photob = L.icon({
   iconSize: [25,38],
   iconAnchor: [-5,37],
   shadowAnchor: [-5, 38],
-  popupAnchor:  [-3, -50]
+  popupAnchor:  [10, -30]
 });
 
 var photobooth = [
@@ -303,12 +303,12 @@ $(document).ready(function () {
       listIt += "<br><span class='glyphicon glyphicon-globe' aria-hidden='true'></span>&nbsp;" + "<a href='http://" + resta.features[i].properties.Web + "' target='_blank'>Website</a>&nbsp;</p>";
   
     // MODAL
-      listIt += "<button type='button' id='modalbut' class='btn btn-primary btn-sm modalbut' data-toggle='modal' data-target='#myModal'>";
+      listIt += "<button type='button' id='"+ resta.features[i].properties.OBJECTID+ "' class='btn btn-primary btn-sm modalbut' data-toggle='modal' data-target='#myModal'>";
       listIt += "Menu";
       listIt += "</button>";
-      listIt += "<div class='modal fade' id='myModal' tabindex='-1' role='dialog' aria-labelledby='myModalLabel'>";
-      listIt += "<div class='modal-dialog' role='document'>";
-      listIt += "<div class='modal-content' id=''>";
+      listIt += "<div class='modal fade' id='myModal' val='"+ resta.features[i].properties.OBJECTID+ "' tabindex='-1' role='dialog' aria-labelledby='myModalLabel'>";
+      listIt += "<div class='modal-dialog' role='document' val='"+ resta.features[i].properties.OBJECTID+ "'>";
+      listIt += "<div class='modal-content' id='"+ resta.features[i].properties.OBJECTID+ "'>";
       listIt += "<div class='modal-header'>";
       listIt += "<button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>";
       listIt += "<h4 class='modal-title' id='myModalLabel'>" + resta.features[i].properties.Organization + "</h4>"
@@ -350,38 +350,35 @@ $(document).ready(function () {
       var id = $(this)[0].id;
       geojson1.eachLayer(function(feature){
 
+
         if(feature.feature.properties.OBJECTID==id) {
          feature.openPopup();
       }
   });
 });
 
+
+$(".modalbut").click(function(event) {
+
+  var id = $(this)[0].id;
+  var m2 = document.getElementById('myModal');
+
+m2.forEach(function(feature){
+  if(feature.val==id) {
+    feature.modal("show");
+}
+
+});
 });
 
+});
+
+// $("#myModal").modal("show");
 
 
 
-$("#modalbut").click(function(event) {
-$("#myModal").modal("show");
+$(".modalbut").click(function(event) {
 
-
-// var id = $(this)[0].id;
-// geojson1.eachLayer(function(feature){
-
-//   if(feature.feature.properties.OBJECTID==id) {
-//     $(".modal-content").id
-//   }
-
-
-
-  // var id = $(".modal-content")[0].id;
-     
-  //       geojson1.eachLayer(function(feature){
-  //         if(feature.feature.properties.OBJECTID==id) {
-  //         feature.openPopup();
-  //       }
-
-  //       });
 
 
 $("#map").on('click', function(f) {
