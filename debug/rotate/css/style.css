@@ -1168,6 +1168,12 @@ font-size: 15px;
     cursor: hand; 
     max-width: 120px;
   }
+
+#bootstrap-overrides .btn .btn-primary .btn-sm .modalbut2  {
+  width: 60px;
+  min-width: 60px;
+
+}
 #bootstrap-overrides .btn-primary {
   width: 60px;
 }
