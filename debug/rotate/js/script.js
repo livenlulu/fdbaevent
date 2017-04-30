@@ -198,22 +198,46 @@ function onEachFeature(feature, layer) {
 }
 
 
+    // $("#resta li a").mouseover(function(e){
+    //   e.stopPropagation();
+      
+    //   var id = $(this)[0].id;
+    //   geojson1.eachLayer(function(feature){
+
+
+    //     if(feature.feature.properties.OBJECTID==id) {
+    //      feature.openPopup();
+
+
+
+
 
 
 function onMarClick(e) {
+  var id = ((e.latlng.lng),toFixed(2)) + ',' + e.latlng.lat.toString();
+  
+  var id2 = $('.middd')[0].id;
+  // console.log(id2);
 
-// for (var i = 0; i < resta.features.length; i++){
-//   var lia = resta.features[i];
 
 
-  // $("#resta li").each(function() {
-  //   $(this).toggleClass("rhover");
-  //   console.log(this);
-  // });
+console.log(id)
+console.log(id2)
+    if(id2 == id )   
+  {
 
-  // }
+    $(".middd").hover(function(e) {
+       e.stopPropagation();
+   $(this).addClass("rhover");
+ },
+ function(e) {
+  e.stopPropagation();
+  $(this).removeClass("rhover");
+ });
 
-console.log(e);
+  }
+
+  
 }
   
  // },
@@ -322,7 +346,7 @@ $(document).ready(function () {
     for (var i = 0; i < resta.features.length; i++){
 
       listIt += "<li>";
-      listIt += "<a id='" + resta.features[i].properties.OBJECTID+ "'><div id='middd' style='height:150px;>'><div id='m2' class='col-md-4'><img class='img-responsive' onerror='this.parentNode.removeChild(this)' src='img2/"+resta.features[i].properties.OBJECTID+".jpg'></div>";
+      listIt += "<a id='" + resta.features[i].properties.OBJECTID+ "'><div class='middd' id=' "+resta.features[i].geometry.coordinates+"'style='height:150px;>'><div id='m2' class='col-md-4'><img class='img-responsive' onerror='this.parentNode.removeChild(this)' src='img2/"+resta.features[i].properties.OBJECTID+".jpg'></div>";
       listIt += "<div class='col-md-1'></div><div class='col-md-7'>";
       listIt += "<h5>" +  resta.features[i].properties.Organization + "&nbsp; </h5>";
       listIt += "<p><span class='glyphicon glyphicon-map-marker' aria-hidden='true'></span>&nbsp;" + resta.features[i].properties.Address;
