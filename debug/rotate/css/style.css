@@ -2,8 +2,8 @@
     padding-top: 5%;
     padding-left: 10%;
     padding-right: 10%;
-    font-family: 'Helvetica Neue';
-    font-size: 11px;
+    font-family: 'Roboto';
+    font-size: 12px;
     font-weight: 300;
     background: transparent !important;
     background-color: transparent !important;
@@ -22,6 +22,22 @@
 
 }
 
+/*  #bootstrap-overrides #myModal2 .modal-open{
+    z-index: 1050;
+    display: block;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+  }
+
+ #bootstrap-overrides #myModal2 .fade .in {
+  opacity: 1;
+ }*/
 
   @font-face {
     font-family: proxima-nova;
@@ -38,8 +54,16 @@
   cursor: hand; 
   height: 28px;
 }
+
+  #bootstrap-overrides #results button{
+  cursor: pointer;
+  cursor: hand; 
+  height: 28px;
+  padding-bottom: 10px;
+}
   #bootstrap-overrides img.img-responsive {
-    margin-top: 12px;
+    margin-top: 0px;
+    padding-top: 15px;
     cursor: pointer; 
     cursor: hand; 
     max-width: 150px;
@@ -126,7 +150,7 @@
   #bootstrap-overrides .middd {
     width: 100%;
     border-top: 1px solid #1A1F2C;
-
+    height: 140px;
   }
 
 
@@ -217,11 +241,11 @@
   }
 
   #bootstrap-overrides h5 {
-    font-size: 12px;
+    font-size: 16px;
     margin-bottom: 5px;
-    font-family: Lato;
+    font-family: Montserrat;
     margin-top:0px;
-    padding-top: 10px;
+    padding-top: 8px;
     padding-bottom: 0px;
     line-height: 1.1;
   }
@@ -299,9 +323,16 @@
     text-decoration: none;
   }
 
+
+  #bootstrap-overrides #seapop .img-responsive {
+    padding-bottom: 19px;
+  }
+
+
   #bootstrap-overrides a {
     color: black;
-    
+    font-family: "Roboto";
+    font-size: 12px;
   }
 
   textarea:hover, 
@@ -433,7 +464,7 @@
   #map {
     margin-top: 0px;
     width: 100%;
-    height: 551px;
+    height: 589px;
     border: solid 1px #ccc;
     
 /*    max-height: 603px;*/
@@ -477,7 +508,7 @@
 }
 
  #bootstrap-overrides .input-group {
-  margin-bottom: 2px;
+  margin-bottom: 1px;
  }
 
  #bootstrap-overrides #results {
@@ -485,8 +516,9 @@
   background-color: #eee;
   width: 100%;
    overflow:scroll;
+   height: 552px;
    min-height: 412px;
-   max-height: 511px;
+
    border: solid 1px #E4E4E4;
 
 }
@@ -495,6 +527,16 @@
     background-color: #fff;
   }
 
+
+  #bootstrap-overrides #results .modal-body ul:hover {
+    background-color: #fff;
+  }
+
+    #bootstrap-overrides #results .modal-body ul {
+    background-color: #fff !important;
+  }
+
+  
 
   #bootstrap-overrides #results #seapop ul {
     cursor: pointer; 
@@ -509,6 +551,7 @@
   #bootstrap-overrides p {
   margin: 0px;
   padding-bottom: 10px;
+  font-size: 12px;
   }
 
 
@@ -685,6 +728,7 @@ overflow:auto;
 #bootstrap-overrides .col-md-7 a h5 {
   font-family: Montserrat;
   font-size: 16px;
+  padding-top: 5px;
 }
 
 #bootstrap-overrides .col-md-7 a p {
@@ -702,7 +746,7 @@ overflow:auto;
   line-height: 1.42857143;
   padding-top: 0px;
   padding-bottom: 0px;
-  font-size: 11px;
+  font-size: 12px;
   /*text-align: -webkit-center;*/
   font-family: 'Helvetica Neue';
 /*  text-shadow: 0 1px 0 rgba(0,0,0,0.02);*/
@@ -1047,10 +1091,11 @@ font-size: 15px;
 
 @media screen and (max-width: 992px) {
 #bootstrap-overrides img.img-responsive {
-    margin-top: 12px;
+    padding-top: 12px;
     cursor: pointer; 
     cursor: hand; 
     max-width: 120px;
+    margin-top: 0px;
   }
 
 #bootstrap-overrides .modal-body li {
@@ -1085,6 +1130,10 @@ font-size: 15px;
   
 }
 
+#bootstrap-overrides .rhover {
+  height: 230px;
+}
+
 #bootstrap-overrides .modal-dialog {
   margin-top: 10% !important;
   width: 80%;
@@ -1108,7 +1157,8 @@ font-size: 15px;
     padding: 0px;
   }
 #bootstrap-overrides img.img-responsive {
-    margin-top: 12px;
+    margin-top: 0px;
+    padding-top: 12px;
     cursor: pointer; 
     cursor: hand; 
     max-width: 120px;
@@ -1127,9 +1177,11 @@ font-size: 15px;
 #bootstrap-overrides .modalbut {
   min-width: 85px;
 }
-
+#bootstrap-overrides .modalbut2 {
+  height: 28px;
+}
 #bootstrap-overrides #resta li {
-  height: 230px;
+  height: 220px;
 }
 
 #bootstrap-overrides #sm{
@@ -1191,8 +1243,7 @@ font-size: 15px;
 
 #bootstrap-overrides #results {
  /* position: absolute;*/
- min-height: 342px;
- max-height: 442px;
+ height: 475px;
 
 }
 
@@ -1208,8 +1259,17 @@ font-size: 15px;
 }
 
 #bootstrap-overrides #resta {
-  max-height:510px;
+  max-height:474px;
 
+}
+
+#bootstrap-overrides #results {
+  width: 98%;
+
+}
+
+#bootstrap-overrides .rhover {
+  height: 220px;
 }
 
 #bootstrap-overrides #lef {
@@ -1225,6 +1285,7 @@ font-size: 15px;
 
 #bootstrap-overrides .middd .col-md-7 {
     padding-top: 0px;
+   
  }
 
 #bootstrap-overrides #rig {
