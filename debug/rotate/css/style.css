@@ -36,6 +36,7 @@
   #bootstrap-overrides #resta button{
   cursor: pointer;
   cursor: hand; 
+  height: 28px;
 }
   #bootstrap-overrides img.img-responsive {
     margin-top: 12px;
@@ -45,19 +46,50 @@
   }
 #bootstrap-overrides .btn-primary {
   width: 140px;
-  background-color: #2D96FF;
-  border-color: #1476C6;
+  background-color: #0080C6;
+  border-color: #015888;
+  border-width: 1px;
+  height: 28px;
 }
 
 #bootstrap-overrides .modalbut:hover {
-    background-color: #000;
+    background-color: #eee;
+    color: #000;
     cursor: pointer; 
+}
+
+#bootstrap-overrides .modal-header {
+    background-color: #0080C6;
+
+}
+
+#bootstrap-overrides #myModalLabel {
+  font-family: "Montserrat";
+  padding-left: 0px;
+  font-size: 20px;
+  color: #eee;
+}
+
+#bootstrap-overrides .modal-body li {
+  font-family: "Roboto";
+  font-size: 14px;
+  text-align: center;
+}
+
+#bootstrap-overrides .modal-body {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  
 }
 
 
 #bootstrap-overrides .modal-dialog {
   margin-top: 10%;
+  width: 60%;
 }
+
   #bootstrap-overrides .col-md-6 {
     padding-left: 0px;
     padding-right: 0px;
@@ -143,7 +175,7 @@
 
   #bootstrap-overrides #lef {
     width: 58%;
-    min-width: 198px;
+   /* min-width: 198px;*/
     padding-left: 0px;
     float:left;
     position: relative;
@@ -232,7 +264,7 @@
   #bootstrap-overrides li { 
     cursor: pointer; 
     cursor: hand; 
-    font-size: 11px;
+    font-size: 12px;
   }
 
   #bootstrap-overrides ul { 
@@ -291,13 +323,18 @@
 
   }
  
+
+  #bootstrap-overrides #middd .col-md-7 {
+    padding-top: 5px;
+ }
+
   #bootstrap-overrides h2 {
     font-size: 20px;
     font-family: Montserrat;
     font-weight: 900;
     margin-top: 4px;
-    margin-bottom: 3px;
-    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+    letter-spacing: 2.2px;
     margin-left: 0px;
     color: #000;
   }
@@ -486,7 +523,9 @@
   text-align: left;
   left: 0%;
 }
-
+#bootstrap-overrides .rhover {
+  background-color: #eee;
+}
 
 #bootstrap-overrides .leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar {
   border: 1px solid rgba(0,0,0,0.2);
@@ -644,7 +683,7 @@ overflow:auto;
 }
 
 #bootstrap-overrides .col-md-7 a h5 {
-  font-family: Lato;
+  font-family: Montserrat;
   font-size: 16px;
 }
 
@@ -981,7 +1020,7 @@ font-size: 15px;
 
 /*POPUP COLOR*/
 #bootstrap-overrides #ona {
-  background-color: #2D96FF;
+  background-color: #0080C6;
 
 }
 
@@ -1014,9 +1053,15 @@ font-size: 15px;
     max-width: 120px;
   }
 
+#bootstrap-overrides .modal-body li {
+  height: inherit !important; 
+}
+
 #bootstrap-overrides li {
   height: 230px;
 }
+
+
 
 #bootstrap-overrides .col-md-7 {
   text-align: center;
@@ -1025,6 +1070,26 @@ font-size: 15px;
 #bootstrap-overrides .btn-primary {
   text-align: center;
   float: none;
+}
+
+
+#bootstrap-overrides #lef {
+  padding-right: 3px;
+  width:40%;
+/*  max-width: 170px;*/
+}
+
+#bootstrap-overrides #rig {
+/* max-width: 205px;*/
+ width:60%;
+  
+}
+
+#bootstrap-overrides .modal-dialog {
+  margin-top: 10% !important;
+  width: 80%;
+  float: center;
+  margin: 0 auto;
 }
 
   body, html {
@@ -1052,7 +1117,18 @@ font-size: 15px;
   width: 60px;
 }
 
-#bootstrap-overrides li {
+#bootstrap-overrides .modal-dialog {
+  margin-top: 10% !important;
+  width: 90%;
+  float: center;
+  margin: 0 auto;
+}
+
+#bootstrap-overrides .modalbut {
+  min-width: 85px;
+}
+
+#bootstrap-overrides #resta li {
   height: 230px;
 }
 
@@ -1137,19 +1213,28 @@ font-size: 15px;
 }
 
 #bootstrap-overrides #lef {
-  padding-right: 0px;
-  max-width:40%;
+  padding-right: 3px;
+  width:40%;
 /*  max-width: 170px;*/
 }
 
-#bootstrap-overrides #rig {
-/* max-width: 205px;*/
- max-width:60%;
-  
+#bootstrap-overrides .col-md-7 a h5 {
+  font-size: 13px;
 }
 
+
+#bootstrap-overrides #middd .col-md-7 {
+    padding-top: 0px;
+ }
+
+#bootstrap-overrides #rig {
+/* max-width: 205px;*/
+ width:60%;
+}
+
+
 #bootstrap-overrides p {
- font-size: 9px;
+ font-size: 10px;
  padding-bottom: 5px;
 }
 #headin3 { padding-left: 35px;

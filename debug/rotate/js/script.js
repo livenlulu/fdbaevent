@@ -1,3 +1,5 @@
+var listIt = "";
+
 var layer = L.tileLayer('https://api.mapbox.com/styles/v1/livenlulu/ciu0azvas00322in5xzze3u48/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibGl2ZW5sdWx1IiwiYSI6ImNpZ3h0ZzltbzB1cTQ0cG0zamthcno1dmwifQ.vZrmbXCCq15ZVuF6g6vhkA',{
     attribution: ''
 });
@@ -8,7 +10,7 @@ var map = L.map('map', {
   rotate: true,
   animate: true, 
   duration: 2
-  }).setView([40.805177,-73.954929], 17);
+  }).setView([40.804224,-73.955551], 17);
   map.addLayer(layer);
   map.setBearing(331);
 
@@ -26,8 +28,8 @@ var bizmarker = {
 
 var parking = L.icon({
   iconUrl: 'img/p.png',
-  iconSize: [21,21],
-  iconAnchor: [15,5]
+  iconSize: [16,16],
+  iconAnchor: [0,5]
 });
 
 var atrain = L.icon({
@@ -190,9 +192,43 @@ function onEachFeature(feature, layer) {
     layer.bindPopup(popup);
     layer.on({
         mouseover: mouseoverFunction,
-        mouseout: resetHighlight
+        mouseout: resetHighlight,
+        click: onMarClick
     });
 }
+
+
+
+
+function onMarClick(e) {
+
+// for (var i = 0; i < resta.features.length; i++){
+//   var lia = resta.features[i];
+
+
+  // $("#resta li").each(function() {
+  //   $(this).toggleClass("rhover");
+  //   console.log(this);
+  // });
+
+  // }
+
+console.log(e);
+}
+  
+ // },
+ // function(e) {
+ //  e.stopPropagation();
+ //  $(this).removeClass("rhover");
+ // });
+
+
+//      $('div').removeClass('active');
+//     $('#resta li' + e.target._leaflet_id).addClass('active');
+//     map.panTo(e.target.getLatLng());
+// }
+
+
 
 
 
@@ -207,23 +243,13 @@ function onEachFeature(feature, layer) {
     }).addTo(map);
 
 
-// pa.forEach(function(p) {
-//   var mar = L.marker(p.coord, {icon: parking}).addTo(map);
-//   mar.bindPopup("<div id='popm'>" + p.name + "</div>")
-// });
-
-// resta.forEach(function(e) {
-//   var foodi = L.marker(e.features.geometry.coordinates, {icon: foodicon}).addTo(map);
-//   foodi.bindPopup()
-// });
-
  
 
 //popupopen center
 map.on('popupopen', function(e) {
     var px = map.project(e.popup._latlng); // find the pixel location on the map where the popup anchor is
     px.y -= e.popup._container.clientHeight/2 // find the height of the popup container, divide by 2, subtract from the Y axis of marker location
-    px.x += e.popup._container.clientWidth/2000
+    px.x += e.popup._container.clientWidth/2000 + 65
     map.panTo(map.unproject(px),{animate: true, duration: .8}); // pan to new center
 });
   
@@ -291,7 +317,8 @@ $(".navbar-collapse.in").collapse("hide");
 
 
 $(document).ready(function () {
-  var listIt = "";
+
+  
     for (var i = 0; i < resta.features.length; i++){
 
       listIt += "<li>";
@@ -303,15 +330,15 @@ $(document).ready(function () {
       listIt += "<br><span class='glyphicon glyphicon-globe' aria-hidden='true'></span>&nbsp;" + "<a href='http://" + resta.features[i].properties.Web + "' target='_blank'>Website</a>&nbsp;</p>";
   
     // MODAL
-      listIt += "<button type='button' id='"+ resta.features[i].properties.OBJECTID+ "' class='btn btn-primary btn-sm modalbut' data-toggle='modal' data-target='#myModal'>";
+      listIt += "<button type='button' class='btn btn-primary btn-sm modalbut' data-toggle='modal' data-target='#myModal"+i+"'>";
       listIt += "Menu";
       listIt += "</button>";
-      listIt += "<div class='modal fade' id='myModal' val='"+ resta.features[i].properties.OBJECTID+ "' tabindex='-1' role='dialog' aria-labelledby='myModalLabel'>";
-      listIt += "<div class='modal-dialog' role='document' val='"+ resta.features[i].properties.OBJECTID+ "'>";
-      listIt += "<div class='modal-content' id='"+ resta.features[i].properties.OBJECTID+ "'>";
+      listIt += "<div class='modal fade' id='myModal"+i+"' tabindex='-1' role='dialog' aria-labelledby='myModalLabel'>";
+      listIt += "<div class='modal-dialog' role='document'>";
+      listIt += "<div class='modal-content'>";
       listIt += "<div class='modal-header'>";
       listIt += "<button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>";
-      listIt += "<h4 class='modal-title' id='myModalLabel'>" + resta.features[i].properties.Organization + "</h4>"
+      listIt += "<h4 class='modal-title' id='myModalLabel'>" + resta.features[i].properties.Organization + " - Menu</h4>"
       listIt += "</div>";
       listIt += "<div class='modal-body'>" + resta.features[i].properties.html + "</div>";       
  
@@ -343,6 +370,15 @@ $(document).ready(function () {
     }
     $("#resta").html(listIt);
 
+    $("#resta li").hover(function(e) {
+       e.stopPropagation();
+   $(this).addClass("rhover");
+ },
+ function(e) {
+  e.stopPropagation();
+  $(this).removeClass("rhover");
+ });
+
 
     $("#resta li a").mouseover(function(e){
       e.stopPropagation();
@@ -358,22 +394,10 @@ $(document).ready(function () {
 });
 
 
-$(".modalbut").click(function(event) {
-
-  var id = $(this)[0].id;
-  var m2 = document.getElementById('myModal');
-
-m2.forEach(function(feature){
-  if(feature.val==id) {
-    feature.modal("show");
-}
-
-});
-});
-
 });
 
 // $("#myModal").modal("show");
+
 
 
 
