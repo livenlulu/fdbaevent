@@ -332,7 +332,7 @@ $(document).ready(function () {
     for (var i = 0; i < resta.features.length; i++){
 
       listIt += "<li>";
-      listIt += "<a id='" + resta.features[i].properties.OBJECTID+ "'><div class='middd' id='"+resta.features[i].properties.OBJECTID+"' style='height:150px;>'><div id='m2' class='col-md-4'><img class='img-responsive' onerror='this.parentNode.removeChild(this)' src='img2/"+resta.features[i].properties.OBJECTID+".jpg'></div>";
+      listIt += "<a id='" + resta.features[i].properties.OBJECTID+ "'><div class='middd' id='"+resta.features[i].properties.OBJECTID+"'><div id='m2' class='col-md-4'><img class='img-responsive' onerror='this.parentNode.removeChild(this)' src='img2/"+resta.features[i].properties.OBJECTID+".jpg'></div>";
       listIt += "<div class='col-md-1'></div><div class='col-md-7'>";
       listIt += "<h5>" +  resta.features[i].properties.Organization + "&nbsp; </h5>";
       listIt += "<p><span class='glyphicon glyphicon-map-marker' aria-hidden='true'></span>&nbsp;" + resta.features[i].properties.Address;
@@ -415,9 +415,6 @@ $(document).ready(function () {
 
 });
 
-// $("#myModal").modal("show");
-
-
 
 
 $(window).load(function(){
@@ -438,18 +435,42 @@ if ($(this).val().length == 0) {
 
             // $.getJSON('data/data.geojson', function(data) {
             //   $.each(data, function(key, val){
-              geojson1.eachLayer(function(val){
+              for (var a = 0; a < resta.features.length; a++){
                 
-                if ((val.feature.properties.Organization.search(regex) != -1) || (val.feature.properties.Address.search(regex) != -1)) {
+                if ((resta.features[a].properties.Organization.search(regex) != -1) || (resta.features[a].properties.Address.search(regex) != -1)) {
                   output += '<div class="dropdown" id="seapop">';
-                  output += '<ul id="' + val.feature.properties.OBJECTID +'">';
-                  output += '<div class="col-md-3"><img height="80px" class="img-responsive" onerror="this.parentNode.removeChild(this)" src="img2/'+val.feature.properties.OBJECTID+'.jpg" alt="'+ val.feature.properties.Organization +'" /></div>';
-                  output += '<div class="col-md-6">';
-                  output += '<h5>' + val.feature.properties.Organization + '</h5>';
-                  output += '<p>' + val.feature.properties.Address + '</p>'
-                  output += '</div><hr style="border-top: 1px solid #ddd; margin-bottom: 0px; margin-top:0px; width:90%;">';
-                  output += '</div>';
-                  output += '</div>';
+                  output += '<ul id="' + resta.features[a].properties.OBJECTID +'">';
+                  output += '<div id="m2" class="col-md-4"><img class="img-responsive" onerror="this.parentNode.removeChild(this)" src="img2/'+resta.features[a].properties.OBJECTID+'.jpg" alt="'+ resta.features[a].properties.Organization +'" /></div>';
+                  output += "<div class='col-md-1'></div><div class='col-md-7'>";
+                  output += '<h5>' + resta.features[a].properties.Organization + '</h5>';
+                  output += "<p><span class='glyphicon glyphicon-map-marker' aria-hidden='true'></span>&nbsp;" + resta.features[a].properties.Address;
+                  output += "<br><span class='glyphicon glyphicon-earphone' aria-hidden='true'></span>&nbsp;" + resta.features[a].properties.Phone;
+                  output += "<br><span class='glyphicon glyphicon-globe' aria-hidden='true'></span>&nbsp;" + "<a href='http://" + resta.features[a].properties.Web + "' target='_blank'>Website</a>&nbsp;</p>";
+                  
+                  output += "<button type='button' class='btn btn-primary btn-sm modalbut2' data-toggle='modal' data-target='#myModal"+a+"'>";
+                  output += "Menu";
+                  output += "</button>";
+
+                  output += "<div class='modal fade' id='myModal"+a+"' tabindex='-1' role='dialog' aria-labelledby='myModalLabel'>";
+                  output += "<div class='modal-dialog' role='document' id='mod2'>";
+                  output += "<div class='modal-content'>";
+                  output += "<div class='modal-header'>";
+                  output += "<button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>";
+                  output += "<h4 class='modal-title' id='myModalLabel'>" + resta.features[a].properties.Organization + " - Menu</h4>"
+                  output += "</div>";
+                  output += "<div class='modal-body' style='background-color:#fff;'>" + resta.features[a].properties.html + "</div>";       
+             
+                  output += "<div class='modal-footer'>";
+                  output += "<button type='button' id='closeb' class='btn btn-default' data-dismiss='modal'>Close</button>";
+                  output += "</div>";
+                  output += "</div>";
+                  output += "</div>";
+                  output += "</div>";
+
+
+                  output += '</div><hr style="border-top: 1px solid #ddd; margin-bottom: 0px; margin-top:20px; padding-top:0px; width:100%;">';
+                  output += '</ul></div></div>';
+                 
                   if(count%2 == 0){
                     output += '</div><div class="row">'
                   }
@@ -462,10 +483,12 @@ if ($(this).val().length == 0) {
                 // }
 
 
-              });
+              };
 
 
               output += '</div>';
+
+
 
               $('#results').html(output);
               // console.log(count)
@@ -493,7 +516,7 @@ if ($(this).val().length == 0) {
                 }
 
 
-          $("#results #seapop ul").click(function(e){
+          $("#results #seapop ul").mouseover(function(e){
                       e.stopPropagation();
 
                         var id3 = $(this)[0].id;
@@ -509,23 +532,43 @@ if ($(this).val().length == 0) {
 // }); 
 
 
+// $('#myModal').appendTo("body").modal('show');
+
+
+$(".modalbut2").click(function(e){
+                      
+$("#myModal").modal("show");
+$('#myModal').modal({backdrop: 'static', keyboard: false})  
+
+$('#map').css('z-index', 100);
+$('#results').css('z-index', 1090);
+$('#results').css('position', 'static');
+$('#resta').css('display', 'none');
+    
+$('#mod2').css('z-index', 8000);
+// $('#mod2').css('opacity', 1);
 
 
 
-        });
-                 });
-         });
+});
+
+});
+});
+});
                      
 
 
  $("#se1").click(function(e) {
  e.stopPropagation();
- $("#results").hide()
+ $("#results").css('display', 'none');
 
  $("#resta").show()
      $('#results').css('z-index', 100);
      $('#resta').css('z-index', 600);
 
+$('#myModal').css('z-index', 3000);
+$('#myModal').css('position', 'absolute');
+$('#myModal').modal({backdrop: 'static', keyboard: false})  
 
 
 $('#search').focus(
@@ -539,7 +582,10 @@ $('#search').focus(
 
 
 
-$(".modalbut").click(function(event) {
+
+$(".modalbut2").click(function(event) {
+
+
 
 
 
