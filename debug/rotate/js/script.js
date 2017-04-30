@@ -468,7 +468,7 @@ if ($(this).val().length == 0) {
                   output += "</div>";
 
 
-                  output += '</div><hr style="border-top: 1px solid #ddd; margin-bottom: 0px; margin-top:20px; padding-top:0px; width:100%;">';
+                  output += '</div><hr style="border-top: 1px solid #ddd; margin-bottom: 0px; margin-top:10px; padding-top:0px; width:100%;">';
                   output += '</ul></div></div>';
                  
                   if(count%2 == 0){
