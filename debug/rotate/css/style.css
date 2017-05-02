@@ -1175,6 +1175,10 @@ font-size: 15px;
   body, html {
     padding: 0px;
   }
+
+  #bootstrap-overrides #f2 {
+    display: none;
+  }
 #bootstrap-overrides img.img-responsive {
     margin-top: 0px;
     padding-top: 12px;
@@ -1188,7 +1192,7 @@ font-size: 15px;
 }
 
 #bootstrap-overrides .jumbotron h2 {
-  margin-left:4px;
+  margin-left:8px;
 }
 
 #bootstrap-overrides .btn .btn-primary .btn-sm .modalbut2  {
