@@ -771,7 +771,21 @@ overflow:auto;
 }
 
 
+#bootstrap-overrides .popu .modalbut {
+  margin-top: 5px;
+  height: 24px;
+  min-width: 80px;
+  width: 130px;
+  padding-top: 2px;
+ 
+  margin-left: 20px;
 
+}
+
+
+#bootstrap-overrides .popu h4 {
+  height: 80px;
+}
 
 
 
@@ -1169,6 +1183,10 @@ font-size: 15px;
     max-width: 120px;
   }
 
+#bootstrap-overrides .jumbotron {
+  padding-top :0px;
+}
+
 #bootstrap-overrides .btn .btn-primary .btn-sm .modalbut2  {
   width: 60px;
   min-width: 60px;
@@ -1310,6 +1328,12 @@ font-size: 15px;
 #bootstrap-overrides .modalbut2  {
   width: 80px;
 }
+
+#bootstrap-overrides #im2 {
+  padding-top:3px;
+  width: 70px;
+}
+
 
 #bootstrap-overrides p {
  font-size: 11px;
