@@ -1187,6 +1187,10 @@ font-size: 15px;
   padding-top :0px;
 }
 
+#bootstrap-overrides .jumbotron h2 {
+  margin-left:4px;
+}
+
 #bootstrap-overrides .btn .btn-primary .btn-sm .modalbut2  {
   width: 60px;
   min-width: 60px;
