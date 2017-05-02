@@ -189,8 +189,9 @@ function resetHighlight(e) {
 function onEachFeature(feature, layer) {
 
 
-    var popup = "<div class ='popu' id='" + feature.properties.OBJECTID+ "'><h5 id ='ona'>" + feature.properties.Organization + "</h5>" + "<h6 id='ona'>" + feature.properties.Category + '</h6>' + "<center><img class='imggg' style='padding-left:15px; padding-right:15px;' onerror='this.parentNode.removeChild(this)' src='img2/" + feature.properties.OBJECTID + ".jpg ' width='180px'>" + "</a></center>" + "<h4><span id='inf1' class='glyphicon glyphicon-map-marker' aria-hidden='true'></span>&nbsp;" + feature.properties.Address  + "<br><span id='inf2' class='glyphicon glyphicon-earphone' aria-hidden='true'></span>&nbsp;" + feature.properties.Phone;
-
+    var popup = "<div class ='popu' id='" + feature.properties.OBJECTID+ "'><h5 id ='ona'>" + feature.properties.Organization + "</h5>" + "<h6 id='ona'>" + feature.properties.Category + '</h6>' + "<center><img class='imggg' style='padding-left:15px; padding-right:15px;' onerror='this.parentNode.removeChild(this)' src='img2/" + feature.properties.OBJECTID + ".jpg ' width='180px'>" + "</a></center>" + "<h4><span id='inf1' class='glyphicon glyphicon-map-marker' aria-hidden='true'></span>&nbsp;" + feature.properties.Address  + "<br><span id='inf2' class='glyphicon glyphicon-earphone' aria-hidden='true'></span>&nbsp;" + feature.properties.Phone+"<br>";
+    var popupbutton = "<button type='button' class='btn btn-primary btn-sm modalbut' data-toggle='modal' data-target='#myModal"+feature.properties.OBJECTID+"'>Menu</button></div>";
+      /*
       var popup2;
 
     for (var i = 0; i < resta.features.length; i++){
@@ -212,18 +213,12 @@ function onEachFeature(feature, layer) {
       popup2 += "</div>";
       popup2 += "</div>";
       popup2 += "</div>";
-      popup2 += "</div></div>";
+      popup2 += "</div></div>";*/
 
 
 
 
-
-
-
-
-}
-
-    layer.bindPopup(popup + popup2);
+    layer.bindPopup(popup+popupbutton);
 
     layer.on({
         mouseover: mouseoverFunction,
@@ -394,10 +389,10 @@ $(document).ready(function () {
       listIt += "<br><span class='glyphicon glyphicon-globe' aria-hidden='true'></span>&nbsp;" + "<a href='http://" + resta.features[i].properties.Web + "' target='_blank'>Website</a>&nbsp;</p>";
   
     // MODAL
-      listIt += "<button type='button' class='btn btn-primary btn-sm modalbut' data-toggle='modal' data-target='#myModal"+i+"'>";
+      listIt += "<button type='button' class='btn btn-primary btn-sm modalbut' data-toggle='modal' data-target='#myModal"+resta.features[i].properties.OBJECTID+"'>";
       listIt += "Menu";
       listIt += "</button>";
-      listIt += "<div class='modal fade' id='myModal"+i+"' tabindex='-1' role='dialog' aria-labelledby='myModalLabel'>";
+      listIt += "<div class='modal fade' id='myModal"+resta.features[i].properties.OBJECTID+"' tabindex='-1' role='dialog' aria-labelledby='myModalLabel'>";
       listIt += "<div class='modal-dialog' role='document'>";
       listIt += "<div class='modal-content'>";
       listIt += "<div class='modal-header'>";
