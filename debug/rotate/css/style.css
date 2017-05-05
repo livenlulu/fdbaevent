@@ -476,7 +476,7 @@
   }
 
   #bootstrap-overrides .leaflet-control-zoom {
-    z-index: 200;
+    z-index: 10;
   }
 
 /*
@@ -1101,7 +1101,13 @@ font-size: 15px;
   background-color: #3288bd;
  
 }
+#bootstrap-overrides .leaflet-popup-content {
+  z-index: 8000;
+}
+
+
 /*POP*/
+
 
 @media screen and (max-width: 992px) {
 #bootstrap-overrides img.img-responsive {
